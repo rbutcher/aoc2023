@@ -25,6 +25,7 @@ var rootCmd = &cobra.Command{
 	RunE: func(cmd *cobra.Command, args []string) error {
 		solutions := []solution{
 			{P1: solutions.Day0P1, P2: solutions.Day0P2},
+			{P1: solutions.Day1P1, P2: solutions.Day1P2},
 		}
 
 		day := viper.GetInt("day")
