@@ -26,6 +26,7 @@ var rootCmd = &cobra.Command{
 		solutions := []solution{
 			{P1: solutions.Day0P1, P2: solutions.Day0P2},
 			{P1: solutions.Day1P1, P2: solutions.Day1P2},
+			{P1: solutions.Day2p1, P2: solutions.Day2p2},
 		}
 
 		day := viper.GetInt("day")

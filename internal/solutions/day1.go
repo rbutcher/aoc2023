@@ -6,7 +6,6 @@ package solutions
 
 import (
 	_ "embed"
-	"github.com/rs/zerolog/log"
 	"strconv"
 	"strings"
 )
@@ -27,9 +26,7 @@ var numeralWordValues = map[string]int{
 }
 
 func Day1P1() error {
-	l := log.Logger.With().
-		Str("context", "day1p1").
-		Logger()
+	l := logWithScope("day1p1")
 
 	lines := strings.Split(day1Input, "\n")
 	result := 0
@@ -45,9 +42,7 @@ func Day1P1() error {
 }
 
 func Day1P2() error {
-	l := log.Logger.With().
-		Str("context", "day1p2").
-		Logger()
+	l := logWithScope("day1p2")
 
 	lines := strings.Split(day1Input, "\n")
 	result := 0
