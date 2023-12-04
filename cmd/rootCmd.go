@@ -27,6 +27,7 @@ var rootCmd = &cobra.Command{
 			{P1: solutions.Day0P1, P2: solutions.Day0P2},
 			{P1: solutions.Day1P1, P2: solutions.Day1P2},
 			{P1: solutions.Day2p1, P2: solutions.Day2p2},
+			{P1: solutions.Day3P1, P2: solutions.Day3P2},
 		}
 
 		day := viper.GetInt("day")
@@ -54,7 +55,9 @@ func init() {
 	cobra.OnInitialize(configureLogging)
 
 	rootCmd.PersistentFlags().IntP("day", "d", 0, "The problem/day to be run.")
+	rootCmd.PersistentFlags().Bool("debug", false, "A flag denoting if debug printing is enabled.")
 	viper.BindPFlag("day", rootCmd.PersistentFlags().Lookup("day"))
+	viper.BindPFlag("debug", rootCmd.PersistentFlags().Lookup("debug"))
 }
 
 func configureLogging() {
