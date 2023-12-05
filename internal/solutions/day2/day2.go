@@ -2,20 +2,21 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package solutions
+package day2
 
 import (
 	_ "embed"
+	"github.com/rbutcher/aoc2023/internal/common"
 	"github.com/rs/zerolog"
 	"strconv"
 	"strings"
 )
 
-//go:embed input/day2.txt
+//go:embed input.txt
 var d2input string
 
 func Day2p1() error {
-	l := logWithScope("day2p1")
+	l := common.LoggerWithScope("day2p1")
 
 	sum := 0
 	numCubes := &CubeSet{Red: 12, Green: 13, Blue: 14}
@@ -32,7 +33,7 @@ func Day2p1() error {
 }
 
 func Day2p2() error {
-	l := logWithScope("day2p2")
+	l := common.LoggerWithScope("day2p2")
 
 	sum := 0
 	lines := strings.Split(d2input, "\n")

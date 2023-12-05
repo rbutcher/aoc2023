@@ -2,7 +2,7 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package solutions
+package day1
 
 import (
 	"fmt"

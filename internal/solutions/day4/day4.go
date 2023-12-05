@@ -2,7 +2,7 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package solutions
+package day4
 
 import (
 	_ "embed"
@@ -16,7 +16,7 @@ const (
 	nine = uint8('9')
 )
 
-//go:embed input/day4.txt
+//go:embed input.txt
 var day4Input string
 
 func Day4P1() error {

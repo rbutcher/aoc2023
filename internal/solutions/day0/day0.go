@@ -2,14 +2,14 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package solutions
+package day0
 
 import (
 	_ "embed"
 	"github.com/rs/zerolog/log"
 )
 
-//go:embed input/day0.txt
+//go:embed input.txt
 var day0Input string
 
 func Day0P1() error {

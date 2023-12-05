@@ -2,15 +2,16 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package solutions
+package day1
 
 import (
 	_ "embed"
+	"github.com/rbutcher/aoc2023/internal/common"
 	"strconv"
 	"strings"
 )
 
-//go:embed input/day1.txt
+//go:embed input.txt
 var day1Input string
 
 var numeralWordValues = map[string]int{
@@ -26,7 +27,7 @@ var numeralWordValues = map[string]int{
 }
 
 func Day1P1() error {
-	l := logWithScope("day1p1")
+	l := common.LoggerWithScope("day1p1")
 
 	lines := strings.Split(day1Input, "\n")
 	result := 0
@@ -42,7 +43,7 @@ func Day1P1() error {
 }
 
 func Day1P2() error {
-	l := logWithScope("day1p2")
+	l := common.LoggerWithScope("day1p2")
 
 	lines := strings.Split(day1Input, "\n")
 	result := 0

@@ -6,9 +6,12 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/rbutcher/aoc2023/internal/solutions"
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/log"
+	"github.com/rbutcher/aoc2023/internal/common"
+	"github.com/rbutcher/aoc2023/internal/solutions/day0"
+	"github.com/rbutcher/aoc2023/internal/solutions/day1"
+	"github.com/rbutcher/aoc2023/internal/solutions/day2"
+	"github.com/rbutcher/aoc2023/internal/solutions/day3"
+	"github.com/rbutcher/aoc2023/internal/solutions/day4"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
@@ -24,11 +27,11 @@ var rootCmd = &cobra.Command{
 	Short: "aoc2023 is a runner for solutions to the Advent of Code 2023",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		solutions := []solution{
-			{P1: solutions.Day0P1, P2: solutions.Day0P2},
-			{P1: solutions.Day1P1, P2: solutions.Day1P2},
-			{P1: solutions.Day2p1, P2: solutions.Day2p2},
-			{P1: solutions.Day3P1, P2: solutions.Day3P2},
-			{P1: solutions.Day4P1, P2: solutions.Day4P2},
+			{P1: day0.Day0P1, P2: day0.Day0P2},
+			{P1: day1.Day1P1, P2: day1.Day1P2},
+			{P1: day2.Day2p1, P2: day2.Day2p2},
+			{P1: day3.Day3P1, P2: day3.Day3P2},
+			{P1: day4.Day4P1, P2: day4.Day4P2},
 		}
 
 		day := viper.GetInt("day")
@@ -53,14 +56,10 @@ func Execute() {
 }
 
 func init() {
-	cobra.OnInitialize(configureLogging)
+	cobra.OnInitialize(common.ConfigureLogger)
 
 	rootCmd.PersistentFlags().IntP("day", "d", 0, "The problem/day to be run.")
 	rootCmd.PersistentFlags().Bool("debug", false, "A flag denoting if debug printing is enabled.")
 	viper.BindPFlag("day", rootCmd.PersistentFlags().Lookup("day"))
 	viper.BindPFlag("debug", rootCmd.PersistentFlags().Lookup("debug"))
-}
-
-func configureLogging() {
-	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 }

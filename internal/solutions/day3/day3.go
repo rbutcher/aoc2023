@@ -2,15 +2,14 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package solutions
+package day3
 
 import (
 	_ "embed"
-	"github.com/rbutcher/aoc2023/internal/matrix"
 	"github.com/rs/zerolog/log"
 )
 
-//go:embed input/day3.txt
+//go:embed input.txt
 var day3Input string
 
 func Day3P1() error {
@@ -36,7 +35,7 @@ func Day3P2() error {
 }
 
 func sumPartNumbers(source string) int {
-	m := matrix.FromString(source)
+	m := FromString(source)
 	result := 0
 	for y := 0; y < len(m); y++ {
 		for x := 0; x < len(m[y]); x++ {
@@ -54,7 +53,7 @@ func sumPartNumbers(source string) int {
 }
 
 func sumGearRatios(source string) int {
-	m := matrix.FromString(source)
+	m := FromString(source)
 	result := 0
 	for y := 0; y < len(m); y++ {
 		for x := 0; x < len(m[y]); x++ {

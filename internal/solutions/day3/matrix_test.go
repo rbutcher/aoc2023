@@ -2,7 +2,7 @@
 Copyright © 2023 Ryan Butcher <ryanbutcher06@gmail.com>
 */
 
-package matrix
+package day3
 
 import (
 	"fmt"
