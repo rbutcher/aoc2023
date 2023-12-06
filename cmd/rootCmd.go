@@ -13,6 +13,7 @@ import (
 	"github.com/rbutcher/aoc2023/internal/solutions/day3"
 	"github.com/rbutcher/aoc2023/internal/solutions/day4"
 	"github.com/rbutcher/aoc2023/internal/solutions/day5"
+	"github.com/rbutcher/aoc2023/internal/solutions/day6"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
@@ -34,6 +35,7 @@ var rootCmd = &cobra.Command{
 			{P1: day3.Day3P1, P2: day3.Day3P2},
 			{P1: day4.Day4P1, P2: day4.Day4P2},
 			{P1: day5.Day5P1, P2: day5.Day5P2},
+			{P1: day6.Day6P1, P2: day6.Day6P2},
 		}
 
 		day := viper.GetInt("day")
